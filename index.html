@@ -19,17 +19,12 @@
     header {
       background-color: #333;
       color: #fff;
-      padding: 10px 0;
+      padding: 15px 0;
       width: 100%;
       position: fixed;
       top: 0;
       z-index: 1000;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    header h1 {
-      font-size: 24px;
-      margin: 0;
-      padding: 0;
     }
 
     .header-container {
@@ -39,6 +34,24 @@
       max-width: 1200px;
       margin: auto;
       padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Profile Image */
+    .profile-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+      border: 2px solid #fff;
+      object-fit: cover;
     }
 
     /* Navigation */
@@ -56,47 +69,66 @@
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s;
+      font-size: 0.95rem;
     }
     nav ul li a:hover {
       color: #ff7f50;
     }
 
-    /* Profile Image */
-    .profile-img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      margin-right: 10px;
-      border: 2px solid #fff;
-      object-fit: cover;
-    }
-
     /* Main Container */
     .main-container {
       max-width: 1200px;
-      margin: 100px auto 0;
+      margin: 120px auto 0;
       padding: 20px;
     }
 
     /* Section Styling */
     section {
       background: #fff;
-      padding: 30px;
+      padding: 25px;
       margin: 20px 0;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
+      transition: transform 0.2s ease;
     }
     section:hover {
-      transform: translateY(-5px);
+      transform: translateY(-3px);
     }
     section h2 {
       color: #333;
       border-bottom: 2px solid #ff7f50;
-      display: inline-block;
       padding-bottom: 8px;
       margin-bottom: 20px;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
+    }
+
+    /* Lists */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 15px;
+    }
+
+    /* Job Titles */
+    h3 {
+      font-size: 1.25rem;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    /* Subtext (Company and Date) */
+    .subtext {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    /* Paragraphs */
+    p {
+      line-height: 1.6;
+      color: #444;
     }
 
     /* Skill List Styling */
@@ -108,10 +140,9 @@
     .skills-list li {
       background-color: #333;
       color: #fff;
-      padding: 10px;
+      padding: 8px 12px;
       border-radius: 20px;
       font-size: 0.9rem;
-      list-style: none;
     }
 
     /* Footer Styling */
@@ -119,7 +150,7 @@
       background-color: #333;
       color: #fff;
       text-align: center;
-      padding: 10px 0;
+      padding: 15px 0;
       position: fixed;
       width: 100%;
       bottom: 0;
@@ -132,10 +163,10 @@
 
   <header>
     <div class="header-container">
-      <div class="profile-section">
+      <h1>
         <img class="profile-img" src="profile_pic.jpg" alt="Profile Picture">
-        <h1>Lilan Jayasuriya</h1>
-      </div>
+        Lilan Jayasuriya
+      </h1>
       <nav>
         <ul>
           <li><a href="#summary">Summary</a></li>
@@ -157,23 +188,20 @@
 
     <section id="experience">
       <h2>Experience</h2>
-       <ul>
+      <ul>
         <li>
           <h3>DevOps Engineer</h3>
-          <p>LOLC Technologies</p>
-          <p>2023 - Present</p>
+          <p class="subtext">LOLC Technologies | 2023 - Present</p>
           <p>Deployed WSO2 API Manager on Google Cloud Platform (GCP) using Google Kubernetes Engine (GKE).</p>
         </li>
         <li>
           <h3>Senior Associate DevOps Engineer</h3>
-          <p>LOLC Technologies</p>
-          <p>2022 - 2023</p>
+          <p class="subtext">LOLC Technologies | 2022 - 2023</p>
           <p>Handled API management, enterprise integrations, and IAM with WSO2 middleware, along with Linux system administration, load balancing, container orchestration, and CI/CD.</p>
         </li>
         <li>
           <h3>Trainee DevOps Engineer</h3>
-          <p>LOLC Technologies</p>
-          <p>2019 - 2022</p>
+          <p class="subtext">LOLC Technologies | 2019 - 2022</p>
           <p>The role primarily involved API management, Enterprise Integrations, and Identity and Access Management using the WSO2 middleware stack.</p>
         </li>
       </ul>
@@ -198,7 +226,7 @@
       <ul>
         <li>
           <h3>BSc(Hons) in Computer Science</h3>
-          <p>University of Westminster, 2023</p>
+          <p class="subtext">University of Westminster, 2023</p>
         </li>
       </ul>
     </section>
@@ -208,7 +236,7 @@
       <ul>
         <li>
           <h3>Oracle Cloud Infrastructure Certified Foundations Associate</h3>
-          <p>Oracle, 2023</p>
+          <p class="subtext">Oracle, 2023</p>
         </li>
       </ul>
     </section>
