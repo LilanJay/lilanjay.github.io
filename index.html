@@ -7,12 +7,12 @@
   <style>
     /* Global Styles */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
-      background-color: #f0f4f8;
+      background-color: #f4f4f4;
       color: #333;
+      overflow-x: hidden;
     }
 
     /* Header Styles */
@@ -20,37 +20,33 @@
       background-color: #333;
       color: #fff;
       padding: 10px 0;
-      text-align: center;
-      position: fixed;
       width: 100%;
-      height: 120px;
+      position: fixed;
       top: 0;
-      transition: height 0.3s;
-      z-index: 9999;
-    }
-    .profile-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 10px;
-    }
-    .profile-img {
-      width: 80px;
-      height: 80px;
-      margin-right: 15px;
-      border-radius: 50%;
-      border: 2px solid #fff;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     header h1 {
-      font-size: 1.8rem;
+      font-size: 24px;
       margin: 0;
-    }
-    nav ul {
-      list-style: none;
-      margin: 10px 0;
       padding: 0;
+    }
+
+    .header-container {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    /* Navigation */
+    nav ul {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
     }
     nav ul li {
       margin: 0 15px;
@@ -65,78 +61,120 @@
       color: #ff7f50;
     }
 
-    /* Content Styles */
-    .container {
-      width: 80%;
-      margin: 0 auto;
-      padding-top: 160px;
-      padding-bottom: 50px;
-    }
-    section {
-      margin: 20px 0;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    h2 {
-      color: #444;
-      border-bottom: 2px solid #ff7f50;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin-bottom: 10px;
+    /* Profile Image */
+    .profile-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 10px;
+      border: 2px solid #fff;
+      object-fit: cover;
     }
 
-    /* Footer Styles */
+    /* Main Container */
+    .main-container {
+      max-width: 1200px;
+      margin: 100px auto 0;
+      padding: 20px;
+    }
+
+    /* Section Styling */
+    section {
+      background: #fff;
+      padding: 30px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    section:hover {
+      transform: translateY(-5px);
+    }
+    section h2 {
+      color: #333;
+      border-bottom: 2px solid #ff7f50;
+      display: inline-block;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    /* Skill List Styling */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skills-list li {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      list-style: none;
+    }
+
+    /* Footer Styling */
     footer {
       background-color: #333;
       color: #fff;
       text-align: center;
       padding: 10px 0;
       position: fixed;
-      bottom: 0;
       width: 100%;
+      bottom: 0;
+      font-size: 0.9rem;
     }
   </style>
 </head>
+
 <body>
 
   <header>
-    <div class="profile-section">
-      <img class="profile-img" src="profile_pic.jpg" alt="Profile Picture">
-      <h1>Lilan Jayasuriya</h1>
+    <div class="header-container">
+      <div class="profile-section">
+        <img class="profile-img" src="profile_pic.jpg" alt="Profile Picture">
+        <h1>Lilan Jayasuriya</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#summary">Summary</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#skills">Skills</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#summary">Summary</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#skills">Skills</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <div class="container">
+  <div class="main-container">
     <section id="summary">
       <h2>Summary</h2>
-      <p>DevOps Engineer skilled in Docker, Kubernetes, WSO2, CICD (Jenkins), automation, ELK, Terraform, Ansible, and diverse DevOps tools. Proven in optimizing app efficiency, scalability, and reliability.</p>
+      <p>DevOps Engineer skilled in Docker, Kubernetes, WSO2, CI/CD, and other DevOps tools. Proven in optimizing application efficiency, scalability, and reliability.</p>
     </section>
 
     <section id="experience">
       <h2>Experience</h2>
-      <ul>
+       <ul>
+        <li>
+          <h3>DevOps Engineer</h3>
+          <p>LOLC Technologies</p>
+          <p>2023 - Present</p>
+          <p>Deployed WSO2 API Manager on Google Cloud Platform (GCP) using Google Kubernetes Engine (GKE).</p>
+        </li>
         <li>
           <h3>Senior Associate DevOps Engineer</h3>
-          <p>LOLC Technologies (2022 - 2023)</p>
-          <p>Involved in API management, Enterprise Integrations, and IAM using WSO2. Tasks included Linux admin, server maintenance, load balancing, containerization, infrastructure provisioning, CI/CD, and automation.</p>
+          <p>LOLC Technologies</p>
+          <p>2022 - 2023</p>
+          <p>Handled API management, enterprise integrations, and IAM with WSO2 middleware, along with Linux system administration, load balancing, container orchestration, and CI/CD.</p>
+        </li>
+        <li>
+          <h3>Trainee DevOps Engineer</h3>
+          <p>LOLC Technologies</p>
+          <p>2019 - 2022</p>
+          <p>The role primarily involved API management, Enterprise Integrations, and Identity and Access Management using the WSO2 middleware stack.</p>
         </li>
       </ul>
     </section>
@@ -146,11 +184,11 @@
       <ul>
         <li>
           <h3>LogSense</h3>
-          <p>An ML-based project focused on optimizing the DevOps lifecycle through efficient log anomaly detection and root cause analysis.</p>
+          <p>Optimized DevOps lifecycle through efficient log anomaly detection and root cause analysis using machine learning.</p>
         </li>
         <li>
           <h3>Trace Metric</h3>
-          <p>A collaborative project for COVID-19 detection using NodeMCU, Arduino, React, Neo4j, and AWS Lambda.</p>
+          <p>Developed a COVID-19 detection solution using NodeMCU, Arduino, Neo4j, and AWS Lambda.</p>
         </li>
       </ul>
     </section>
@@ -168,38 +206,31 @@
     <section id="certifications">
       <h2>Certifications</h2>
       <ul>
-        <li>Oracle Cloud Infrastructure 2023 Certified Foundations Associate, Oracle, 2023</li>
+        <li>
+          <h3>Oracle Cloud Infrastructure Certified Foundations Associate</h3>
+          <p>Oracle, 2023</p>
+        </li>
       </ul>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
-      <ul>
-        <li>Docker, Kubernetes, Nginx, React, Ansible, MySQL, WSO2, Load Balancing</li>
+      <ul class="skills-list">
+        <li>Docker</li>
+        <li>Kubernetes</li>
+        <li>Nginx</li>
+        <li>React</li>
+        <li>Ansible</li>
+        <li>MySQL</li>
+        <li>WSO2 Middleware Stack</li>
+        <li>Load Balancing</li>
       </ul>
     </section>
   </div>
 
   <footer>
-    <p>&copy; 2023 Lilan Jayasuriya</p>
+    <p>&copy; 2024 Lilan Jayasuriya</p>
   </footer>
 
-  <script>
-    // Smooth Scroll
-    document.querySelectorAll('nav ul li a').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelector(link.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    // Header Resize on Scroll
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-      header.style.height = window.scrollY > 50 ? '80px' : '120px';
-    });
-  </script>
 </body>
 </html>
